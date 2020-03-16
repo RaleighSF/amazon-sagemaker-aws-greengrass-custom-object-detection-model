@@ -1,6 +1,6 @@
 # Training the Built-In Object Detection Model in Amazon SageMaker and running it on AWS IoT Greengrass
 
-This material strives to provide a comprehensive set of notebooks to showcase an ML Object detection workflow. The workflow is being leveraged as part of a larger foundational framework. This repo was forked from Angela Wang's original work and cooresponding blog posts. Angela's work was heavily leveraged in place of previously written notebooks on a similar topic. The fork presents the merge of original material with Angela's more comprehensive material.
+This material strives to provide a comprehensive set of notebooks to showcase an ML Object detection workflow. The workflow is being leveraged as part of a larger foundational CV/ML framework. This repo was forked from Angela Wang's original work and cooresponding blog posts. Angela's work was heavily leveraged in place of previously written notebooks on a similar topic. The fork presents the merge of original material with Angela's more comprehensive material.
 
 **Object detection** is the process of identifying and localizing objects in an image. A typical object detection solution takes in an image as input and provides a bounding box on the image where an object of interest is, along with identifying what object the box encapsulates.
 
