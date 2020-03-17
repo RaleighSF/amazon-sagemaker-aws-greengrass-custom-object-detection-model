@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+import os
+import sys
+import traceback
+from shutil import copyfile
+
+import tensorflow as tf
+
+from utils import commandline_util
+from utils.configuration_util import Configuration
+
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+
+if __name__ == '__main__':
+    config = Configuration()
+    try:
+        print(f'USING TENSORFLOW VERSION {tf.__version__}')
+
+        # MODEL TRAINING
+        params = ['--model_dir', str(config.model_path),
+                  '--pipeline_config_path', str(config.pipeline_config_path)]
+        print('STARTING THE TRAINING')
+        commandline_util.run_python_script(config.training_script, params)
+
+        # MODEL FREEZE AND EXPORT AS .pb
+        freeze_export_params = ['--input_type', str('image_tensor'),
+                                '--pipeline_config_path', str(config.pipeline_config_path),
+                                '--trained_checkpoint_prefix',
+                                str(config.model_path + '/model.ckpt-' + str(config.num_steps)),
+                                '--output_directory', str(config.model_path + '/graph')]
+
+        print('EXPORTING FROZEN GRAPH')
+        commandline_util.run_python_script(config.freezing_script, freeze_export_params)
+
+        copyfile(config.label_map_path, config.model_path + '/graph/label_map.pbtxt')
+        copyfile(config.hparams_path, config.model_path + '/graph/hyperparameters.json')
+
+        graph_files = os.listdir(config.model_path + '/graph')
+        print(f'SUCCESSFULLY GENREATED GRAPHS: {graph_files}')
+
+        # A zero exit code causes the job to be marked a Succeeded.
+        sys.exit(0)
+
+    except Exception as e:
+        # Write out an error file. This will be returned as the failureReason in the
+        # DescribeTrainingJob result.
+        trc = traceback.format_exc()
+        with open(os.path.join(config.output_path, 'failure'), 'w') as s:
+            s.write('Exception during training: ' + str(e) + '\n' + trc)
+        # Printing this causes the exception to be in the training job logs, as well.
+        print('Exception during training: ' + str(e) + '\n' + trc, file=sys.stderr)
+        # A non-zero exit code causes the training job to be marked as Failed.
+        sys.exit(255)
