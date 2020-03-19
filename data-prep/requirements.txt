@@ -1,7 +1,7 @@
 boto3
 Pillow
 opencv-python
-torchvision
-torch
 scikit-image
 matplotlib
+jsonlines
+
