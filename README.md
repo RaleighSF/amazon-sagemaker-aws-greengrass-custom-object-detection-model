@@ -1,6 +1,6 @@
 # CV/ML Toolkit for Self Guided Object Detection with Tensorflow, Sagemaker, and Sagemaker Groundtruth.
 
-This material strives to provide a comprehensive set of notebooks to showcase a standard ML Object detection workflow. The workflow is being leveraged as part of a larger foundational CV/ML framework. This repo was forked from Angela Wang's original work but substantially modified to account for (among other things) a custom tensorflow image, model optimization through Hyperparameter tuning jobs, and model inference. The conclusion of the excercise produces model artifacts that can be consumed by your application. 
+This material strives to provide a comprehensive set of notebooks to showcase a standard ML Object detection workflow. The workflow is being leveraged as part of a larger foundational CV/ML framework. This repo was forked from Angela Wang's original work but substantially modified to account for (among other things) a custom Tensorflow image, model optimization through Hyperparameter tuning jobs, and model inference. The conclusion of the excercise produces model artifacts that can be consumed by your application. 
 
 ### CV/ML Toolkit Objectives:
 1. Data collection/procurement by way of capturing static frames from video.
