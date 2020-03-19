@@ -2,6 +2,8 @@
 
 This material strives to provide a comprehensive set of notebooks to showcase a standard ML Object detection workflow. The workflow is being leveraged as part of a larger foundational CV/ML framework. This repo was forked from Angela Wang's original work but substantially modified to account for (among other things) a custom Tensorflow image, model optimization through Hyperparameter tuning jobs, and model inference. The conclusion of the excercise produces model artifacts that can be consumed by your application. 
 
+**Object detection** is the process of identifying and localizing objects in an image. A typical object detection solution takes in an image as input and provides a bounding box on the image where an object of interest is, along with identifying what object the box encapsulates.
+
 ### CV/ML Toolkit Objectives:
 1. Data collection/procurement by way of capturing static frames from video.
 1. Curating a good data-set to prepare for labeling
@@ -12,12 +14,23 @@ This material strives to provide a comprehensive set of notebooks to showcase a 
 1. Testing the accuracy of your model on new images.
 1. Export your model for use in your application.
 
+### For best results, to get started:
+1. Log into your AWS Console, select Sagemaker.
+1. Create a new notebook instance (or launch an existing one).
+1. Once the notebook instance has loaded, select __"Open Jupyter"__ to get into the Jupyter console.
+1. From the console, select __New__ (upper right) and then __Terminal__.
+1. Once the terminal window loads:
 
-**Object detection** is the process of identifying and localizing objects in an image. A typical object detection solution takes in an image as input and provides a bounding box on the image where an object of interest is, along with identifying what object the box encapsulates.
+```
+sh-4.2$ cd SageMaker
+sh-4.2$ git clone git@github.com:RaleighSF/amazon-sagemaker-aws-greengrass-custom-object-detection-model.git
+```
+6. Now go back to the Jupyter console (or click on the Jupyter logo upper left).
+7. Click into the __amazon-sagemaker-aws-greengrass-custom-object-detection-model__ directory.
+8. Finally, launch the __CVML_Toolkit.ipynb__
 
-Many scenarios of object detection happen in places with limited connectivity/bandwidth to internet. Therefore, running object detection at the IoT Edge is a often a solution in these use cases. 
-  
-  
+
+
 ## Architecture 
 ![architecture-diagram](./imgs/architeture-diagram.png)
 
