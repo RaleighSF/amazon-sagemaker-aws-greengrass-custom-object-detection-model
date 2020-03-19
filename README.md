@@ -5,14 +5,14 @@ This material strives to provide a comprehensive set of notebooks to showcase a 
 **Object detection** is the process of identifying and localizing objects in an image. A typical object detection solution takes in an image as input and provides a bounding box on the image where an object of interest is, along with identifying what object the box encapsulates.
 
 ### CV/ML Toolkit Objectives:
-1. Data collection/procurement by way of capturing static frames from video.
-1. Curating a good data-set to prepare for labeling
-1. Dataset labeling techniques with Amazon Sagemaker Groundtruth.
-1. Launching a custom tensorflow container in your account
-1. Training against that container with a base model of your choice.
-1. Running Model tuning jobs to optimize your model across a given range of optimizations.
-1. Testing the accuracy of your model on new images.
-1. Export your model for use in your application.
+* Data collection/procurement by way of capturing static frames from video.
+* Curating a good data-set to prepare for labeling
+* Dataset labeling techniques with Amazon Sagemaker Groundtruth.
+* Launching a custom tensorflow container in your account
+* Training against that container with a base model of your choice.
+* Running Model tuning jobs to optimize your model across a given range of optimizations.
+* Testing the accuracy of your model on new images.
+* Export your model for use in your application.
 
 ### For best results, to get started:
 1. Log into your AWS Console, select Sagemaker.
