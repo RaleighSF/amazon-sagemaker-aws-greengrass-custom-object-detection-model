@@ -32,7 +32,7 @@ sh-4.2$ git clone git@github.com:RaleighSF/amazon-sagemaker-aws-greengrass-custo
 
 
 ## Architecture 
-![architecture-diagram](./imgs/architeture-diagram.png)
+![architecture-diagram](./imgs/architecture_diagram.png)
 
 ## Sections
 
